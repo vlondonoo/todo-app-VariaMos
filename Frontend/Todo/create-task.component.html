@@ -1,0 +1,37 @@
+<div>
+  <h1>Create a ToDo</h1>
+  <div class="card-body">
+    <form [formGroup]="profileForm">
+      <div>
+        <label>Task Message</label>
+        <div>
+          <input
+            type="text"
+            class="form-control"
+            name="message"
+            placeholder="Task message"
+            id="task"
+            type="text"
+            formControlName="task"
+          />
+        </div>
+      </div>
+
+      <!--B-addImage-->
+
+      <div>
+        <label class="col-sm-4 col-form-label">&nbsp;</label>
+        <div>
+          <button
+            class="btn btn-primary btn-sm"
+            type="submit"
+            (click)="create()"
+            [disabled]="!profileForm.valid"
+          >
+            Add Task
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
