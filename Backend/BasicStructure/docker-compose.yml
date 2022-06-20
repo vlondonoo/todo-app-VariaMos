@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  mysqldb:
+    image: mysql:5.7
+    restart: unless-stopped
+    env_file: ./.env
+    environment:
+      - MYSQL_ROOT_PASSWORD=$MYSQLDB_SECRET_PASSWORD
+      - MYSQL_DATABASE=$DATABASE_NAME
+      # - MYSQL_RANDOM_ROOT_PASSWORD=yes
+      - DB_ROOT_HOST=$MYSQL_ROOT_HOST
+      - MYSQL_USER=$USER
+      - MYSQL_PASSWORD=$PASSWORD
+      # - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - $MYSQLDB_DOCKER_PORT:$DB_LOCAL_PORT
+    volumes:
+      - db:/var/lib/mysql
+  app:
+    depends_on:
+      - mysqldb
+    build: .
+    restart: unless-stopped
+    env_file: ./.env
+    ports:
+      - $NODE_PORT:$NODE_DOCKER_PORT
+    environment:
+      - DB_HOST=$HOST
+      - DB_USER=$USER
+      - DB_PASSWORD=$PASSWORD
+      - DB_NAME=$DATABASE_NAME
+      - DB_PORT=$MYSQLDB_DOCKER_PORT    
+    stdin_open: true
+    tty: true
+    
+volumes: 
+  db:
