@@ -6,7 +6,7 @@ import { Observable, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class TodoService {
-  url:string = 'http://localhost:3001'
+  url:string = 'https://todoappsplback-pewzp22whq-uc.a.run.app'
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json',"Access-Control-Allow-Origin": '*' })

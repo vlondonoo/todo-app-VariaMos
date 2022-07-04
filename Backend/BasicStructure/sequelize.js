@@ -6,13 +6,13 @@ const { DATABASE_NAME, USERNAME, PASSWORD, HOST, DIALECT } = require('../constan
 const sequelize = new Sequelize(DATABASE_NAME, USERNAME, PASSWORD, {
   host: HOST,
   dialect: DIALECT,
-  port: 3307,
   pool: {
     max: 10,
     min: 0,
     acquire: 30000,
     idle: 10000
-  }
+  },
+  storage: './database.sqlite'
 });
 
 const TodoModel = TodoSequelize(sequelize, Sequelize);
