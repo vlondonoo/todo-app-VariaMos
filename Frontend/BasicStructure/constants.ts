@@ -1,1 +1,3 @@
-export const BACKEND_URI = 'https://todoappsplback-pewzp22whq-uc.a.run.app';
+/*BCP-constants*/
+export const BACKEND_URI = 'BACKEND-URL';
+/*ECP-constants*/
