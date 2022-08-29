@@ -2,14 +2,14 @@
 steps:
 # Build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/todoapp-340315/todoappspl:$COMMIT_SHA', '.']
+  args: ['build', '-t', 'gcr.io/todoapp-340315/todoappfrontend:$COMMIT_SHA', '.']
 
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/todoapp-340315/todoappspl:$COMMIT_SHA']
+  args: ['push', 'gcr.io/todoapp-340315/todoappfrontend:$COMMIT_SHA']
 
 # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['run', 'deploy', 'todoappspl', '--image', 'gcr.io/todoapp-340315/todoappspl:$COMMIT_SHA', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
+  args: ['run', 'deploy', 'todoappfrontend', '--image', 'gcr.io/todoapp-340315/todoappfrontend:$COMMIT_SHA', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
 images:
-- 'gcr.io/todoapp-340315/todoappspl:$COMMIT_SHA'
+- 'gcr.io/todoapp-340315/todoappfrontend:$COMMIT_SHA'
