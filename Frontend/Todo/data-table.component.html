@@ -17,17 +17,12 @@
     <td mat-cell *matCellDef="let element">{{ element.state }}</td>
   </ng-container>
 
+  <!--B-addImageTable-->
   <ng-container matColumnDef="image">
-    <th mat-header-cell *matHeaderCellDef>Image</th>
-    <td mat-cell *matCellDef="let element">
-      <img
-        [style.height.vh]="5"
-        [src]="
-          '../../assets/' + (element.image ? element.image : 'no_image.png')
-        "
-      />
-    </td>
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element"></td>
   </ng-container>
+  <!--E-addImageTable-->
 
   <ng-container matColumnDef="updateAt">
     <th mat-header-cell *matHeaderCellDef>UpdateAt</th>
