@@ -1,0 +1,5 @@
+{ 
+    "CustomizationPoints": "back-cloud-config",
+    "PointBracketsLans": "java",
+    "IDs": "Backend-BasicStructure-cloudbuild"
+ }

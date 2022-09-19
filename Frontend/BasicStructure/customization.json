@@ -1,5 +1,5 @@
 { 
-    "CustomizationPoints": "constants",
-    "PointBracketsLans": "java",
-    "IDs": "Frontend-BasicStructure-constants"
+    "CustomizationPoints": ["constants","front-cloud-config"],
+    "PointBracketsLans": ["java","java"],
+    "IDs": ["Frontend-BasicStructure-constants", "Frontend-BasicStructure-cloudbuild"]
  }
