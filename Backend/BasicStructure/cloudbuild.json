@@ -6,14 +6,14 @@
           "args": [
              "build",
              "-t",
-             "gcr.io/todoapp-340315/todoappbackend:$COMMIT_SHA", "."
+             "gcr.io/project-name/image-name", "."
           ]
        },
        {
         "name": "gcr.io/cloud-builders/docker",
         "args": [
            "push",
-           "gcr.io/todoapp-340315/todoappbackend:$COMMIT_SHA"
+           "gcr.io/project-name/image-name"
         ]
      },
      {
@@ -21,14 +21,14 @@
         "args": [
            "run",
            "deploy",
-           "todoappbackend",
+           "service-name",
             "--image",
-            "gcr.io/todoapp-340315/todoappbackend:$COMMIT_SHA",
+            "gcr.io/project-name/image-name",
              "--region", "us-central1", "--platform", "managed", "--allow-unauthenticated"
         ]
      }
     ],
-    "images":["gcr.io/todoapp-340315/todoappbackend:$COMMIT_SHA"]
+    "images":["gcr.io/project-name/image-name"]
  }
 
  /*ECP-back-cloud-config*/
