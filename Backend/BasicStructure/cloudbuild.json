@@ -6,14 +6,14 @@
           "args": [
              "build",
              "-t",
-             "gcr.io/project-name/image-name", "."
+             "gcr.io/PROJECT-NAME/IMAGE-NAME", "."
           ]
        },
        {
         "name": "gcr.io/cloud-builders/docker",
         "args": [
            "push",
-           "gcr.io/project-name/image-name"
+           "gcr.io/PROJECT-NAME/IMAGE-NAME"
         ]
      },
      {
@@ -21,14 +21,14 @@
         "args": [
            "run",
            "deploy",
-           "service-name",
+           "SERVICE-NAME",
             "--image",
-            "gcr.io/project-name/image-name",
+            "gcr.io/PROJECT-NAME/IMAGE-NAME",
              "--region", "us-central1", "--platform", "managed", "--allow-unauthenticated"
         ]
      }
     ],
-    "images":["gcr.io/project-name/image-name"]
+    "images":["gcr.io/PROJECT-NAME/IMAGE-NAME"]
  }
 
  /*ECP-back-cloud-config*/
